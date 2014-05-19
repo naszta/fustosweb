@@ -1,0 +1,3 @@
+ - "index.html" - az eles oldal elrol mehet
+ - "index_dev.html" - ez a fejlesztoi kod, ami jelenleg is tele van kikommentezett kodsorokkal, utalas keppen, hogy milyen megolodasokbol epitkezhet meg az oldal
+ - "index_dev_beautified.html" - kiszepitett, tomoritetlen, fejlesztoi kod 

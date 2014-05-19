@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<!-- saved from url=(0047)http://fustos.hu/animateAjaxHtml_viewmeta2.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Attila Fustos</title>
+		 <meta name="viewport" content="width=1400, initial-scale=0.5, maximum-scale=1.0, user-scalable=yes">
+		 <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> -->
+		 <!--<meta name="viewport" content="initial-scale=0.5, maximum-scale=0.5">-->
+		
+		<meta name="language" content="Hungarian, English, Spanish">
+		<meta name="doc-type" content="HTML5">
+		<meta name="doc-class" content="Published">
+		<meta name="distribution" content="Global">
+		<meta name="resource-type" content="document">
+		
+		<meta name="revisit-after" content="5 days">
+		<meta name="robots" content="index,follow">
+		<meta name="author" content="www.fustos.com">
+		<meta name="copyright" content="Copyright (c) 2011 fustos.com">
+		
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		
+                <link type="image/ico" rel="Shortcut Icon" href="images/favicon.ico"> 
+                
+                <link href="http://fustos.com/styles/main.css" rel="stylesheet" type="text/css" />
+                <link href="http://fustos.com/styles/lightbox.css" rel="stylesheet" type="text/css" />
+                
+        <!-- optimalised jQuery v1.9 / old v1.4.4 -->
+        <script type="text/javascript" src=" http://code.jquery.com/jquery-2.0.0.min.js"></script>
+        
+                <script type="text/javascript" src="http://cdn.jquerytools.org/1.2.5/full/jquery.tools.min.js"></script>
+                <script type="text/javascript" src="http://fustos.com/scripts/jquery.easing.js"></script>
+                <script type="text/javascript" src="http://fustos.com/scripts/jquery.fancybox.js"></script>
+                <script type="text/javascript" src="http://fustos.com/scripts/smoothscroll.js"></script>
+                <script type="text/javascript" src="http://fustos.com/scripts/jquery.tinyscrollbar.min.js"></script>
+				
+
+
+</head>
+<body style="zoom: 1;">
+<style type="text/css">
+    * {margin:0px; padding:0px; border:none;}
+    body, html {overflow:hidden; height:100%;width:100%; min-height:9500px;/*min-width:4000px;*/}
+    #containerLayer {visibility:hidden; position: absolute; /*min-width:3960px;*/ width: 400%; height: 100%; z-index: 1; margin-left:-100%; min-height: 4000px;}
+    .langContainer {position: relative; float:left; width: 25%; height: 100%; overflow:hidden; min-height:4000px; /*min-width:990px;*/ /*background:#00baff;text-align:center;*/}
+    #maskLayer {
+    		width: 100%;
+    		height:100%;
+    		/*overflow:hidden;*/
+			overflow-x:hidden;
+    }
+    .contentContainer {
+        padding:17px 0px 45px 0px;
+        position: relative;
+        background: #fff;
+        width: 990px;
+        height: 610px;
+        margin: auto;
+/*        overflow:hidden;*/
+    }
+	.contentContainer .container {
+		zoom: 100%;
+	}
+    .visVisible {
+        visibility:visible;
+    }
+    .visHidden {
+        visibility:hidden;
+    }
+	
+	.header {
+		top:none;
+		left:none;
+		position:relative;
+		text-align:left;
+	}
+    .container {
+		margin: -335px 0px 100px -495px;
+		height:604px;
+        padding:0px;
+		overflow:hidden;
+    }
+	.footer {
+		/*margin:0px 0px 10px -450px;*/
+	}
+	.langs {
+		pointer-events: none;
+	}
+</style>
+
+<div class="styleTagClass"></div>
+
+<!-- <div id="maskLayer"> -->
+<div id="containerLayer" style="margin-left: -100%; visibility: visible;">
+    
+    <div id="esDiv" class="langContainer esClass" vertical-align="center">
+        <div class="contentContainer" style="height: 561px; margin-top: 60px; margin-bottom: 60px;">
+        </div>
+        <div class="contentContainer" style="height: 561px; margin-top: 60px; margin-bottom: 60px;">
+        </div>
+        <div class="contentContainer" style="height: 561px; margin-top: 60px; margin-bottom: 60px;">
+        </div>
+        <div class="contentContainer" style="height: 561px; margin-top: 60px; margin-bottom: 60px;">
+        </div>
+        <div class="contentContainer" style="height: 561px; margin-top: 60px; margin-bottom: 60px;">
+        </div>
+        <div class="contentContainer" style="height: 561px; margin-top: 60px; margin-bottom: 60px;">
+        </div>
+        <div class="contentContainer" style="height: 561px; margin-top: 60px; margin-bottom: 60px;">
+        </div>
+    </div>
+	<div id="huDiv" class="langContainer huClass" vertical-align="center">
+        <div class="contentContainer" style="height: 561px; margin-top: 60px; margin-bottom: 60px;">
+        </div>
+        <div class="contentContainer" style="height: 561px; margin-top: 60px; margin-bottom: 60px;">
+        </div>
+        <div class="contentContainer" style="height: 561px; margin-top: 60px; margin-bottom: 60px;">
+        </div>
+        <div class="contentContainer" style="height: 561px; margin-top: 60px; margin-bottom: 60px;">
+        </div>
+        <div class="contentContainer" style="height: 561px; margin-top: 60px; margin-bottom: 60px;">
+        </div>
+        <div class="contentContainer" style="height: 561px; margin-top: 60px; margin-bottom: 60px;">
+        </div>
+        <div class="contentContainer" style="height: 561px; margin-top: 60px; margin-bottom: 60px;">
+        </div>
+    </div>
+    <div id="enDiv" class="langContainer enClass" vertical-align="center">
+        <div class="contentContainer" style="height: 561px; margin-top: 60px; margin-bottom: 60px;">
+        </div>
+        <div class="contentContainer" style="height: 561px; margin-top: 60px; margin-bottom: 60px;">
+        </div>
+        <div class="contentContainer" style="height: 561px; margin-top: 60px; margin-bottom: 60px;">
+        </div>
+        <div class="contentContainer" style="height: 561px; margin-top: 60px; margin-bottom: 60px;">
+        </div>
+        <div class="contentContainer" style="height: 561px; margin-top: 60px; margin-bottom: 60px;">
+        </div>
+        <div class="contentContainer" style="height: 561px; margin-top: 60px; margin-bottom: 60px;">
+        </div>
+        <div class="contentContainer" style="height: 561px; margin-top: 60px; margin-bottom: 60px;">
+        </div>
+    </div>
+<!-- </div> -->
+</div>
+<script language="javascript" type="text/javascript">
+/////////////////////////////////////
+//hash szinkonhoz keszult ajax vezerles es oldal pozicionalast segito JSON 
+//egy pelda: #contacto == "contentPosJSON['contacto']['lang'];"
+window.contentPosJSON = {
+    'domain': { // domain vegzodesek iranyabol inicializalo bejegyzes, amivel at tudjuk nyelvesiteni a legelso hash erteket
+        'hu': 'HU',
+        'com': 'ENG',
+        'es': 'ESP'
+    },
+
+    'indexedContents': {
+        '0': { // ezek az indexelt tartalmak a nyelvek kozotti valtasokra inicializalnak ertekeket
+            'HU': 'kezdolap',
+            'ENG': 'home',
+            'ESP': 'casa'
+        },
+        '1': {
+            'HU': 'bemutatkozas',
+            'ENG': 'introduction',
+            'ESP': 'presentacion'
+        },
+        '2': {
+            'HU': 'oneletrajz',
+            'ENG': 'cv',
+            'ESP': 'cv_esp'
+        },
+        '3': {
+            'HU': 'a_cv_mogott',
+            'ENG': 'behind_the_cv',
+            'ESP': 'detras_de_cv'
+        },
+        '4': {
+            'HU': 'referenciak',
+            'ENG': 'references',
+            'ESP': 'referencias'
+        },
+        '5': {
+            'HU': 'kapcsolat',
+            'ENG': 'contact',
+            'ESP': 'contacto'
+        }
+    },
+
+    'kezdolap': { // tobb nyelvu hash tartalmak adat strukturaja
+        'url': 'hu/HU_1_af.html',
+        'index': '0',
+        'lang': 'hu'
+    },
+    'bemutatkozas': {
+        'url': 'hu/HU_2_intro.html',
+        'index': '1',
+        'lang': 'hu'
+    },
+    'oneletrajz': {
+        'url': 'hu/HU_3_cv.html',
+        'index': '2',
+        'lang': 'hu'
+    },
+    'a_cv_mogott': {
+        'url': 'hu/HU_4_behind.html',
+        'index': '3',
+        'lang': 'hu'
+    },
+    'referenciak': {
+        'url': 'hu/HU_5_ref.html',
+        'index': '4',
+        'lang': 'hu'
+    },
+    'kapcsolat': {
+        'url': 'hu/HU_6_cont.html',
+        'index': '5',
+        'lang': 'hu'
+    },
+
+
+    'home': {
+        'url': 'en/EN_1_af.html',
+        'index': '0',
+        'lang': 'en'
+    },
+    'introduction': {
+        'url': 'en/EN_2_intro.html',
+        'index': '1',
+        'lang': 'en'
+    },
+    'cv': {
+        'url': 'en/EN_3_cv.html',
+        'index': '2',
+        'lang': 'en'
+    },
+    'behind_the_cv': {
+        'url': 'en/EN_4_behind.html',
+        'index': '3',
+        'lang': 'en'
+    },
+    'references': {
+        'url': 'en/EN_5_ref.html',
+        'index': '4',
+        'lang': 'en'
+    },
+    'contact': {
+        'url': 'en/EN_6_cont.html',
+        'index': '5',
+        'lang': 'en'
+    },
+
+
+    'casa': {
+        'url': 'es/ES_1_af.html',
+        'index': '0',
+        'lang': 'es'
+    },
+    'presentacion': {
+        'url': 'es/ES_2_intro.html',
+        'index': '1',
+        'lang': 'es'
+    },
+    'cv_esp': {
+        'url': 'es/ES_3_cv.html',
+        'index': '2',
+        'lang': 'es'
+    },
+    'detras_de_cv': {
+        'url': 'es/ES_4_behind.html',
+        'index': '3',
+        'lang': 'es'
+    },
+    'referencias': {
+        'url': 'es/ES_5_ref.html',
+        'index': '4',
+        'lang': 'es'
+    },
+    'contacto': {
+        'url': 'es/ES_6_cont.html',
+        'index': '5',
+        'lang': 'es'
+    }
+};
+
+window.log = function (consoleLogVar) {
+    console.log(consoleLogVar);
+};
+
+$(function () {
+
+    //ezzel akadalyozzuk meg az oldal mousewheel-el valo scrollozasat
+    var moveObject = new cancelEvent;
+
+    //kiiktatjuk az egergorgo scrollozasat
+    addMouseWheelEvent('mousewheel');
+
+    ///////////////////////////////////////////////	
+    // elso betoltodesre ide pozicionaljuk az oldalt
+    ///////////////////////////////////////////////	
+    $('html, body').stop(false, false).delay(100).animate({
+        scrollTop: '0px'
+    }, {
+        duration: 100,
+        complete: function () {
+            //amikor felepult az oldal, akkor teszi lathatova a tartalmat
+            $('#containerLayer').css({
+                visibility: 'visible'
+            });
+        }
+    });
+
+    //a nyelvi oszlopokat tartalmazza
+    var $langElems = 0;
+    var elemNum = 0;
+
+    window.androidObj = navigator.userAgent.toLowerCase().indexOf('android') != -1 || false;
+    window.android2Obj = navigator.userAgent.toLowerCase().indexOf('android 2.') != -1 || false;
+    window.iphonedObj = navigator.userAgent.toLowerCase().indexOf('iphone') != -1 || false;
+
+    //2.x Android, vagy IOS eseten fut le ez a kod blokk
+    if (window.android2Obj == true || window.iphonedObj == true) {
+        $('body, html').css({
+            minHeight: '4200px'
+        });
+    }
+
+    //csak erintokepernyos keszulekeknek ad relativ poziciot ennek a div-nek
+    if (window.androidObj == true || window.iphonedObj == true) {
+        $('#containerLayer').css({
+            position: 'relative'
+        });
+    }
+
+    //globalisan tarolt 'window.height' ertek
+    window.winHeight = 0;
+    //a tartalmi blokkok kozotti margo tavolsag
+    window.topBottomMargin = 0;
+    //a containerLayer fo kontener elem magassaga
+    containerLayerHeight = 0;
+    //bemeretezzuk a tartalmi blokkok kozotti margotavolsagot es a nagy kontener div magassagat
+    contentMargoFn();
+
+    /////////////////////////////
+    // HASHCHANGE & HASHCONTROL
+    /////////////////////////////
+
+    window.hashChangeTimer = null;
+    window.hashObj = null;
+
+    window.lastJSONIndex = null;
+    window.langActual = '';
+
+    (function () {
+        //az oldal betoltodesekor fut le, vagy refreshkor
+        window.loadTimer = setInterval(function () {
+            try {
+
+                ajaxHashFn();
+                window.zoomFn();
+
+            } catch (e) {
+                clearInterval(window.loadTimer);
+            }
+            clearInterval(window.loadTimer);
+        }, 100);
+
+        function ajaxHashFn() {
+
+            var $langElems = $('#containerLayer').children();
+
+            try {
+                window.hashObj = window.location.hash.split('/');
+                window.hashObj[0] = hashObj[0].replace('#', '');
+
+                if (window.hashObj[0] == '') { //ha nincs hash, akkor az adott domainhez kepest kivalasztja a nyelvet es azzal indit az kezdolap
+                    var domain = window.location.hostname.split('.');
+                    window.location.hash = contentPosJSON['indexedContents']['0']['' + window.contentPosJSON.domain['' + domain[domain.length - 1] + ''] + ''];
+                    return;
+                }
+
+                var index = contentPosJSON['' + window.hashObj[0] + '']['index'];
+                window.lastJSONIndex = index; //a nyelvi lapozas miatt kell az index ertek
+
+                var lang = contentPosJSON['' + window.hashObj[0] + '']['lang'];
+
+                ///////////////////////////////
+                // Left & Right Animation Begin
+                if (lang == 'es' && $langElems.eq(1).hasClass('huClass')) {
+                    animateRightFn();
+                }
+                if (lang == 'en' && $langElems.eq(1).hasClass('huClass')) {
+                    animateLeftFn();
+                }
+                if (lang == 'en' && $langElems.eq(1).hasClass('esClass')) {
+                    animateRightFn();
+                }
+                if (lang == 'hu' && $langElems.eq(1).hasClass('esClass')) {
+                    animateLeftFn();
+                }
+                if (lang == 'hu' && $langElems.eq(1).hasClass('enClass')) {
+                    animateRightFn();
+                }
+                if (lang == 'es' && $langElems.eq(1).hasClass('enClass')) {
+                    animateLeftFn();
+                }
+                // Left & Right Animation End
+                ///////////////////////////////
+                var html = null; //contentPosJSON[''+window.hashObj[0]+'']['url'];
+
+                function loadHtml() { //html betoltesre szolgal ez a fuggveny blokk
+                    if ($('.' + lang + 'Class').children().eq(Number(index)).children().index() == -1) {
+
+                        html = contentPosJSON['' + window.hashObj[0] + '']['url'];
+
+                        $('.' + lang + 'Class').children().eq(Number(index)).load('' + html + '',
+                            function (responseText, textStatus, XMLHttpRequest) {
+                                //csak akkor nem tolti le a blokkokat,ha 2.x-es android
+                                if (textStatus == "success") {
+                                    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                                    // miutan betoltottuk az aktualis tartalmat beajaxolunk minden tartalmat, kiveve a videokat, hogy a mobil netet ne foglaljuk foloslegesen
+                                    for (var i = 0; i < 6; i++) {
+                                        var index_ = contentPosJSON['' + contentPosJSON['indexedContents']['' + i + '']['HU'] + ''].index;
+                                        var lang_ = contentPosJSON['' + contentPosJSON['indexedContents']['' + i + '']['HU'] + ''].lang;
+                                        var html_ = contentPosJSON['' + contentPosJSON['indexedContents']['' + i + '']['HU'] + ''].url;
+
+                                        if (($('.' + lang_ + 'Class').children().eq(Number(index_)).children().index() == -1 && i != 1) || ($('.' + lang_ + 'Class').children().eq(Number(index_)).children().index() == -1 && window.androidObj == true) || ($('.' + lang_ + 'Class').children().eq(Number(index_)).children().index() == -1 && window.iphonedObj == true)) {
+                                            $('.' + lang_ + 'Class').children().eq(Number(index_)).load('' + html_ + '');
+                                        }
+
+                                    }
+                                    for (var i = 0; i < 6; i++) {
+                                        var index_ = contentPosJSON['' + contentPosJSON['indexedContents']['' + i + '']['ENG'] + ''].index;
+                                        var lang_ = contentPosJSON['' + contentPosJSON['indexedContents']['' + i + '']['ENG'] + ''].lang;
+                                        var html_ = contentPosJSON['' + contentPosJSON['indexedContents']['' + i + '']['ENG'] + ''].url;
+
+
+                                        if (($('.' + lang_ + 'Class').children().eq(Number(index_)).children().index() == -1 && i != 1) || ($('.' + lang_ + 'Class').children().eq(Number(index_)).children().index() == -1 && window.androidObj == true) || ($('.' + lang_ + 'Class').children().eq(Number(index_)).children().index() == -1 && window.iphonedObj == true)) {
+                                            $('.' + lang_ + 'Class').children().eq(Number(index_)).load('' + html_ + '');
+                                        }
+
+                                    }
+                                    for (var i = 0; i < 6; i++) {
+                                        var index_ = contentPosJSON['' + contentPosJSON['indexedContents']['' + i + '']['ESP'] + ''].index;
+                                        var lang_ = contentPosJSON['' + contentPosJSON['indexedContents']['' + i + '']['ESP'] + ''].lang;
+                                        var html_ = contentPosJSON['' + contentPosJSON['indexedContents']['' + i + '']['ESP'] + ''].url;
+
+
+                                        if (($('.' + lang_ + 'Class').children().eq(Number(index_)).children().index() == -1 && i != 1) || ($('.' + lang_ + 'Class').children().eq(Number(index_)).children().index() == -1 && window.androidObj == true) || ($('.' + lang_ + 'Class').children().eq(Number(index_)).children().index() == -1 && window.iphonedObj == true)) {
+                                            $('.' + lang_ + 'Class').children().eq(Number(index_)).load('' + html_ + '');
+                                        }
+
+                                    }
+                                    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                                    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+                                    //inicializaljuk ajaxolasok utan a javascript scrollozasi es galeria komponenst es beallitjuk a zoomot
+                                    var timerInd = 0;
+
+                                }
+                            });
+                    }
+                }
+
+                loadHtml();
+
+                if (window.langActual == lang || window.langActual == '') {
+                    if (android2Obj == true) { //Android 2.x eseteben EZT hajtja vegre
+                        $('html, body').stop(false, false).animate({
+                            scrollTop: '' + String(($('.langContainer').children().eq(Number(contentPosJSON['' + window.hashObj[0] + '']['index'])).offset().top) - (window.topBottomMargin)) + 'px'
+                        }, 500);
+                    } else {
+                        //oda scrollozzuk az oldalt, ahanyadik matrix elemhez tartozik a 'contentPosJSON' informacioja szerint az aktualis hash ertek
+                        $('html, body') /*.stop(false,false)*/ .animate({
+                            scrollTop: '' + String(($('.langContainer').children().eq(Number(contentPosJSON['' + window.hashObj[0] + '']['index'])).offset().top) - (window.topBottomMargin)) + 'px'
+                        }, 500);
+                    }
+                }
+
+                window.langActual = lang;
+
+            } catch (e) {
+                clearInterval(window.hashChangeTimer);
+                return false;
+            }
+        }
+
+        $(window).bind('hashchange', function () {
+            window.hashChangeTimer = setInterval(function () {
+                try {
+                    ajaxHashFn();
+                } catch (e) {
+                    clearInterval(window.hashChangeTimer);
+                    return false;
+                }
+                clearInterval(window.hashChangeTimer);
+            }, 100);
+        });
+    })($);
+    /////////////////////////////
+    // RESIZE
+    /////////////////////////////
+    window.resizeTimer = null;
+    $(window).resize(function () {
+
+        //ujra allitjuk atmeretezesnel a margok meretet a tartalmi matrixban
+        contentMargoFn();
+
+        //zoom meretek beallitasa az osszes betoltott tartalomra
+        window.zoomFn();
+
+        if (android2Obj == false) { //Android 2.x eseteben NEM hajtja vegre
+            $('html, body').stop(false, false).animate({
+                scrollTop: '' + String(($('.langContainer').children().eq(Number(contentPosJSON['' + window.hashObj[0] + '']['index'])).offset().top) - (window.topBottomMargin)) + 'px'
+            }, 500);
+        }
+
+    });
+
+    /////////////////////////////
+    // LEFT & RIGHT
+    /////////////////////////////
+    window.animateLeftFn = function () {
+
+        $('#containerLayer').stop(false, false).delay(500).animate({
+            marginLeft: '-200%'
+        }, {
+            complete: function _completeCallback() {
+                ////////////////////////////////////////////////            
+                $langElems.last().after($langElems.first());
+                $langElems = $('#containerLayer').children();
+                $('#containerLayer').css({
+                    marginLeft: '-100%'
+                });
+                ////////////////////////////////////////////////      
+                //oda scrollozzuk az oldalt, ahanyadik matrix elemhez tartozik a 'contentPosJSON' informacioja szerint az aktualis hash ertek
+                $('html, body').stop(false, false).delay(500).animate({
+                    scrollTop: String(($('.langContainer').children().eq(Number(contentPosJSON['' + window.hashObj[0] + '']['index'])).offset().top) - (window.topBottomMargin))
+                }, {
+                    complete: function () {}
+                });
+            }
+        });
+    }
+
+    window.animateRightFn = function () {
+
+        $('#containerLayer').stop(false, false).delay(500).animate({
+            marginLeft: '0%'
+        }, {
+            complete: function _completeCallback() {
+                ////////////////////////////////////////////////
+                $langElems.first().before($langElems.last());
+                $langElems = $('#containerLayer').children();
+                $('#containerLayer').css({
+                    marginLeft: '-100%'
+                });
+                ////////////////////////////////////////////////
+                //oda scrollozzuk az oldalt, ahanyadik matrix elemhez tartozik a 'contentPosJSON' informacioja szerint az aktualis hash ertek
+                $('html, body').stop(false, false).animate({
+                    scrollTop: String(($('.langContainer').children().eq(Number(contentPosJSON['' + window.hashObj[0] + '']['index'])).offset().top) - (window.topBottomMargin))
+                }, {
+                    complete: function () {}
+                });
+            }
+        });
+    }
+    ////////////////////////////////////////////////////////////////////////////////////////
+    // kiszamoljuk a tartalmi matrixon beluli elemeknek az egymastol valo fuggoleges margojat
+    ////////////////////////////////////////////////////////////////////////////////////////
+    function contentMargoFn() {
+        if (window.iphonedObj == false || window.android2Obj == false) {
+            //a kiskepernyos eszkozok miatt kell megadni a body meretet
+            $('body').css({
+                height: '' + $('#containerLayer').height() + 'px',
+                width: '' + $(window).width() + 'px'
+            });
+        }
+        if (window.iphonedObj == true || window.android2Obj == true) {
+            $('body').css({
+                height: '5000px',
+                width: '' + $(window).width() + 'px'
+            });
+        }
+        //ha kisebb az ablak magassaga, mint a tartalmi blokkoke, 
+        //akkor bekicsinyiti a tartalmi blokkokat, hogy kiferjenek
+        window.winHeight = $(window).height();
+
+        //iphone eseteben mashogy adjuk meg a blokkok kozotti margot
+        if (window.iphonedObj == false) {
+            if (window.winHeight <= 620) {
+                $('.contentContainer').css({
+                    height: '620px'
+                });
+                //also/felso margo mereteket szamoljuk ki
+                window.topBottomMargin = 0;
+            } else {
+                //also/felso margo mereteket szamoljuk ki
+                window.topBottomMargin = ((window.winHeight - $('.contentContainer').height()) / 2) >> 0;
+            }
+        }
+        if (window.iphonedObj == true) {
+            window.topBottomMargin = 120;
+        } else if (window.topBottomMargin < 50 && window.androidObj == true) {
+            window.topBottomMargin = 50;
+        }
+        //a fo, animacios container elem height meretet szamoljuk ki
+        /////////////////////////////////////////////////////////////////
+        $langElems = $('#containerLayer').children();
+        elemNum = $langElems.eq(0).children().size();
+        containerLayerHeight = (window.winHeight * elemNum - (elemNum - 2) * window.topBottomMargin);
+        /////////////////////////////////////////////////////////////////
+        if (window.topBottomMargin <= 0) { //IE8 miatt kell
+            window.topBottomMargin = window.topBottomMargin * -1;
+        }
+        $('.contentContainer').css({
+            marginTop: '' + window.topBottomMargin + 'px',
+            marginBottom: '' + window.topBottomMargin + 'px'
+        });
+
+        if (window.iphonedObj == false) {
+            //beallitjuk az oldal animacios kontenerenek a magassagat
+            if (containerLayerHeight < 6000) {
+                containerLayerHeight = 6000;
+            }
+            $('#containerLayer').css({
+                height: '' + containerLayerHeight + 'px'
+            });
+        }
+    }
+    ////////////////////////////////////////////////////////////////////////////////////////
+
+    ///////////////////////////////////////////////////
+    // ezzel allitjuk be a tartalmak belso zoom meretet
+
+    window.zoomFn_ = function () {}
+
+    window.zoomFn = function () {
+
+        var styleStr = ""; //"<style type=\"text/css\">.container{zoom:50%;}<\/style>";
+
+        window.winHeight = $(window).height();
+        window.winWidth = $(window).width();
+
+        if ((window.iphonedObj == true || window.android2Obj == true) && window.winWidth < window.winHeight) {
+            $('body').css({
+                height: '9000px',
+                width: '' + $(window).width() + 'px'
+            });
+        }
+
+        if ((androidObj == true || iphonedObj == true) && !$.browser.msie && $(window).width() <= 990) {
+
+            window.bigSizeObj = window.winHeight > window.winWidth ? window.winHeight : window.winWidth;
+
+            //egy oldal betoltodes alatt egyszer fut csak le ez a program blokk			
+            if (480 == window.bigSizeObj) { //Samsung Galaxy GIO / IOS 4
+                $('.container').css({
+                    zoom: '40%',
+                    marginLeft: '-1150px',
+                    marginTop: '-47%'
+                });
+
+            } else if (640 == window.bigSizeObj) { //Motorola
+                $('.container').css({
+                    zoom: '40%',
+                    marginLeft: '-950px',
+                    marginTop: '-43%'
+                });
+            } else if (960 <= window.bigSizeObj) { //Motorola
+                $('.container').css({
+                    zoom: '60%',
+                    marginLeft: '-550px',
+                    marginTop: '-45%'
+                });
+            }
+        }
+    }
+    // ezzel allitjuk be a tartalmak zoomolasi meretet
+    ///////////////////////////////////////////////////
+
+
+
+    /*-------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Scroll & Events Code Block:
+-------------------------------------------------------------------------------*/
+
+    var dbTouchObj = 0;
+    window.dbTouchTimer = null;
+
+    $(document).bind('mousewheel mousemove touchmove touchstart doubletap click', function (e) {
+        var $targObj = $(targFn(e));
+
+        if (e.type == "touchstart") {
+            try {
+
+                if (android2Obj == true) { //Android 2.x eseteben EZT hajtja vegre
+
+                } else { //Android 2.x eseteben NEM hajtja vegre
+                    //NEM erinto kepernyon VEGRE hajtja
+                    if (window.androidObj == false && window.iphonedObj == false) {
+                        dbTouchObj++;
+
+                        if (dbTouchObj != 1) {
+                            try {
+                                cancelEvent(e);
+                                clearInterval(window.dbTouchTimer);
+                                window.dbTouchTimer = setInterval(function () {
+                                    dbTouchObj = 0;
+                                    clearInterval(window.dbTouchTimer);
+                                }, 500);
+                            } catch (e) {}
+
+                            return;
+                        }
+
+                        window.dbTouchTimer = setInterval(function () {
+                            dbTouchObj = 0;
+                            clearInterval(window.dbTouchTimer);
+                        }, 500);
+                    }
+                }
+
+            } catch (e) {}
+        } else {
+            if (e.type == "touch" || e.type == "click" || e.type == "touchend" || (e.type == "touchmove" && android2Obj == true) || window.iphonedObj == true) {
+                if ($targObj.hasClass('_hash') == true) {
+                    window.location.hash = $targObj.attr('class').substr('6');
+                }
+                ////////////////////////
+                // Left & Right Animate
+                ////////////////////////
+                if ($targObj.hasClass('next') == true && e.type != "touchmove") {
+                    window.location.hash = contentPosJSON['indexedContents']['' + window.lastJSONIndex + '']['' + $targObj.text() + ''];
+                }
+                if ($targObj.hasClass('prev') == true && e.type != "touchmove") {
+                    window.location.hash = contentPosJSON['indexedContents']['' + window.lastJSONIndex + '']['' + $targObj.text() + ''];
+                }
+                return;
+            }
+            if (window.androidObj == false && window.iphonedObj == false) {
+                cancelEvent(e);
+            }
+        }
+
+    });
+
+    //ezzel a fuggvennyel oldjuk meg a lablecben levo nyelvi lapozast
+    window.miniLangBtnFn = function (langStr) {
+        window.location.hash = contentPosJSON['indexedContents']['' + window.lastJSONIndex + '']['' + langStr + ''];
+    }
+
+    //////////////////////////////////  
+    //mouseWhell esemenykezeles hozza adasa
+    ///////////////////////////////////////
+    function addMouseWheelEvent(eventName) {
+        var element = document; //.getElementById(element);
+        if (element == null) return;
+        if (element.addEventListener) {
+            if (eventName == 'mousewheel') element.addEventListener('DOMMouseScroll', moveObject, false);
+            element.addEventListener(eventName, moveObject, false);
+            if (eventName == 'touchmove') {
+                element.addEventListener(eventName, moveObject, false);
+            }
+        } else if (element.attachEvent) element.attachEvent("on" + eventName, moveObject);
+    }
+
+    //////////////////////////////////
+    //mouseWhell esemenykezeles torlese
+    //////////////////////////////////
+    function removeMouseWheelEvent(eventName) {
+        var element = document; //.getElementById(element);
+        if (element == null) return;
+        if (element.addEventListener) {
+            if (eventName == 'mousewheel') element.removeEventListener('DOMMouseScroll', moveObject, false);
+            element.removeEventListener(eventName, moveObject, false);
+            if (eventName == 'touchmove') { //element.removeEventListener('DOMMouseScroll', moveObject, false);
+                element.removeEventListener(eventName, moveObject, false);
+            }
+        } else if (element.attachEvent) element.detachEvent("on" + eventName, moveObject);
+    }
+
+    function targFn(e) {
+        e = e || window.event;
+        var targ = e.target || e.srcElement;
+
+        if (targ.nodeType == 3) { // defeat Safari bug
+            targ = targ.parentNode;
+        }
+
+        return targ;
+    }
+
+    function cancelEvent(e) {
+        try {
+            e = e ? e : window.event;
+            if (e.stopPropagation) e.stopPropagation();
+            if (e.preventDefault) e.preventDefault();
+            e.cancelBubble = true;
+            e.cancel = true;
+            e.returnValue = false;
+        } catch (e) {}
+        return false;
+    }
+
+    // minden tartalmi blokk aljaba el van helyezve egy scripttag, amiben meghivjuk ezt a fuggvenyt
+    window.scrollNGaleryInitFn = function () {
+
+        window.zoomFn();
+
+        $('#hu_cv_scroll, #en_cv_scroll, #esp_cv_scroll, #hu_cv_mogott_scroll, #en_cv_mogott_scroll, #esp_cv_mogott_scroll').tinyscrollbar();
+        $('#hu_gallery_scroll, #en_gallery_scroll, #esp_gallery_scroll').tinyscrollbar({
+            axis: 'x'
+        });
+
+        $("a.overlay").fancybox({
+            'padding': 0,
+            'margin': 80,
+            'speedIn': 600,
+            'speedOut': 200,
+            'overlayShow': true,
+            'overlayOpacity': 0.8,
+            'overlayColor': '#fff',
+            'onStart': function () {
+                $('.browse').animate({
+                    'opacity': 0
+                }, 600);
+            },
+            'onCleanup': function () {
+                $('.browse').animate({
+                    'opacity': 1
+                }, 600);
+            }
+        });
+
+        $("a.iframe").fancybox({
+            'autoScale': false,
+            'scrolling': true,
+            'padding': 0,
+            'margin': 80,
+            'speedIn': 600,
+            'speedOut': 200,
+            'width': 650,
+            'height': 600,
+            'overlayShow': true,
+            'overlayOpacity': 0.8,
+            'overlayColor': '#fff',
+            'onStart': function () {
+                $('.browse').animate({
+                    'opacity': 0
+                }, 600);
+            },
+            'onCleanup': function () {
+                $('.browse').animate({
+                    'opacity': 1
+                }, 600);
+            }
+        });
+    }
+
+});
+</script>
+</body>
+</html>
