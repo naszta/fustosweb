@@ -20,19 +20,45 @@
 		<meta name="description" content="">
 		<meta name="keywords" content="">
 		
-                <link type="image/ico" rel="Shortcut Icon" href="images/favicon.ico"> 
+        <link type="image/ico" rel="Shortcut Icon" href="images/favicon.ico"> 
                 
-                <link href="http://fustos.com/styles/main.css" rel="stylesheet" type="text/css" />
-                <link href="http://fustos.com/styles/lightbox.css" rel="stylesheet" type="text/css" />
-                
+        <link href="http://fustos.com/styles/main.css" rel="stylesheet" type="text/css" />
+        <link href="http://fustos.com/styles/lightbox.css" rel="stylesheet" type="text/css" />
+			
+		<script>
+			//csak akkor "true" ha az eles oldalon fut le a kod
+			//egyebken nem statisztikaz
+			window.originSite = true;//window.location.href.indexOf('http://fustos.com/dev/') == -1;
+			window.hostIPObj = 'unidentified';
+			
+			if(window.originSite){
+
+				(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+				(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+				m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+				})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+				
+				if(window.location.hostname == 'fustos.com'){
+					ga('create', 'UA-51321811-1', 'fustos.com');
+				} else if(window.location.hostname == 'fustos.es'){
+					ga('create', 'UA-51321811-2', 'fustos.es');
+				} else if(window.location.hostname == 'fustos.hu'){
+					ga('create', 'UA-51321811-3', 'fustos.hu');
+				}		  
+
+				ga('send', 'pageview');
+
+			}
+		</script>
+								
         <!-- optimalised jQuery v1.9 / old v1.4.4 -->
         <script type="text/javascript" src=" http://code.jquery.com/jquery-2.0.0.min.js"></script>
         
-                <script type="text/javascript" src="http://cdn.jquerytools.org/1.2.5/full/jquery.tools.min.js"></script>
-                <script type="text/javascript" src="http://fustos.com/scripts/jquery.easing.js"></script>
-                <script type="text/javascript" src="http://fustos.com/scripts/jquery.fancybox.js"></script>
-                <script type="text/javascript" src="http://fustos.com/scripts/smoothscroll.js"></script>
-                <script type="text/javascript" src="http://fustos.com/scripts/jquery.tinyscrollbar.min.js"></script>
+        <script type="text/javascript" src="http://cdn.jquerytools.org/1.2.5/full/jquery.tools.min.js"></script>
+        <script type="text/javascript" src="http://fustos.com/scripts/jquery.easing.js"></script>
+        <script type="text/javascript" src="http://fustos.com/scripts/jquery.fancybox.js"></script>
+        <script type="text/javascript" src="http://fustos.com/scripts/smoothscroll.js"></script>
+        <script type="text/javascript" src="http://fustos.com/scripts/jquery.tinyscrollbar.min.js"></script>
 				
 
 
@@ -286,11 +312,13 @@ window.contentPosJSON = {
 window.log = function(consoleLogVar){ console.log(consoleLogVar); };
 
 $(function(){
-//alert('navigator.userAgent: '+navigator.userAgent);
 
-// arra tett kiserlet, hogy a "viewport" metaban megadott ertekeket dinamikusan irjuk at 
-//	    $('title').text("Your new title tag here");
-//	    $('meta[name=viewport]').attr('content', 'width=device-width, initial-scale=1.0, user-scalable=no');
+	//lekerdezzuk a tartozkodasat a usernek
+    $.getJSON( "http://smart-ip.net/geoip-json?callback=?",
+        function(data){
+            window.hostIPObj = data.countryName+' - '+data.city+' - '+data.host;
+        }
+    );
 
   //ezzel akadalyozzuk meg az oldal mousewheel-el valo scrollozasat
 	var moveObject = new cancelEvent;
@@ -301,20 +329,16 @@ $(function(){
     ///////////////////////////////////////////////	
 	// elso betoltodesre ide pozicionaljuk az oldalt
     ///////////////////////////////////////////////	
-//	var fisrtAnimTimer = setInterval(function(){      
-    	$('html, body').stop(false,false).delay(100).animate({
-    		scrollTop: '0px'
-    	}, 
-        { 
-            duration: 100,
-            complete: function(){
-                //amikor felepult az oldal, akkor teszi lathatova a tartalmat
-                $('#containerLayer').css({visibility:'visible'});
-            }
-        });
-
-//		clearInterval(fisrtAnimTimer);
-//	},100);
+	$('html, body').stop(false,false).delay(100).animate({
+		scrollTop: '0px'
+	}, 
+	{ 
+		duration: 100,
+		complete: function(){
+			//amikor felepult az oldal, akkor teszi lathatova a tartalmat
+			$('#containerLayer').css({visibility:'visible'});
+		}
+	});
 	
 	//a nyelvi oszlopokat tartalmazza
 	var $langElems = 0;
@@ -322,15 +346,15 @@ $(function(){
 
 	window.androidObj = navigator.userAgent.toLowerCase().indexOf('android') != -1 || false;
 	window.android2Obj = navigator.userAgent.toLowerCase().indexOf('android 2.') != -1 || false;
-	window.iphonedObj = navigator.userAgent.toLowerCase().indexOf('iphone') != -1 || false;
+	window.iphoneObj = navigator.userAgent.toLowerCase().indexOf('iphone') != -1 || false;
 	
 	//2.x Android, vagy IOS eseten fut le ez a kod blokk
-	if(window.android2Obj == true || window.iphonedObj == true){
+	if(window.android2Obj == true || window.iphoneObj == true){
 		$('body, html').css({minHeight:'4200px'});
 	}
 	
 	//csak erintokepernyos keszulekeknek ad relativ poziciot ennek a div-nek
-	if(window.androidObj == true || window.iphonedObj == true){
+	if(window.androidObj == true || window.iphoneObj == true){
 		$('#containerLayer').css({position:'relative'});
 	}
 	
@@ -368,9 +392,7 @@ $(function(){
 		},100);
 	
 		function ajaxHashFn(){
-			
-//			jQuery.fx.off = false;
-		
+					
 			var $langElems = $('#containerLayer').children();
 			
 			try{
@@ -387,6 +409,11 @@ $(function(){
 				window.lastJSONIndex = index;//a nyelvi lapozas miatt kell az index ertek
 				
 				var lang = contentPosJSON[''+window.hashObj[0]+'']['lang'];
+			
+				//csak az eles oldalon statisztikazunk
+				if(window.originSite){			
+					ga('send', 'event', 'user location: '+window.hostIPObj+'', 'lang: '+lang+'', 'content: '+window.location.hash+'');
+				}
 				
 				///////////////////////////////
 				// Left & Right Animation Begin
@@ -429,7 +456,7 @@ $(function(){
 										var lang_ = contentPosJSON[''+contentPosJSON['indexedContents'][''+i+'']['HU']+''].lang;
 										var html_ = contentPosJSON[''+contentPosJSON['indexedContents'][''+i+'']['HU']+''].url;
 										
-										if( ($('.'+lang_+'Class').children().eq(Number(index_)).children().index() == -1 && i != 1) || ($('.'+lang_+'Class').children().eq(Number(index_)).children().index() == -1 && window.androidObj == true) || ($('.'+lang_+'Class').children().eq(Number(index_)).children().index() == -1 && window.iphonedObj == true)){				
+										if( ($('.'+lang_+'Class').children().eq(Number(index_)).children().index() == -1 && i != 1) || ($('.'+lang_+'Class').children().eq(Number(index_)).children().index() == -1 && window.androidObj == true) || ($('.'+lang_+'Class').children().eq(Number(index_)).children().index() == -1 && window.iphoneObj == true)){				
 											$('.'+lang_+'Class').children().eq(Number(index_)).load(''+html_+'');
 										}
 																		
@@ -440,7 +467,7 @@ $(function(){
 										var html_ = contentPosJSON[''+contentPosJSON['indexedContents'][''+i+'']['ENG']+''].url;
 
 										
-										if( ($('.'+lang_+'Class').children().eq(Number(index_)).children().index() == -1 && i != 1) || ($('.'+lang_+'Class').children().eq(Number(index_)).children().index() == -1 && window.androidObj == true) || ($('.'+lang_+'Class').children().eq(Number(index_)).children().index() == -1 && window.iphonedObj == true)){				
+										if( ($('.'+lang_+'Class').children().eq(Number(index_)).children().index() == -1 && i != 1) || ($('.'+lang_+'Class').children().eq(Number(index_)).children().index() == -1 && window.androidObj == true) || ($('.'+lang_+'Class').children().eq(Number(index_)).children().index() == -1 && window.iphoneObj == true)){				
 											$('.'+lang_+'Class').children().eq(Number(index_)).load(''+html_+'');
 										}
 										
@@ -451,7 +478,7 @@ $(function(){
 										var html_ = contentPosJSON[''+contentPosJSON['indexedContents'][''+i+'']['ESP']+''].url;
 
 										
-										if( ($('.'+lang_+'Class').children().eq(Number(index_)).children().index() == -1 && i != 1) || ($('.'+lang_+'Class').children().eq(Number(index_)).children().index() == -1 && window.androidObj == true) || ($('.'+lang_+'Class').children().eq(Number(index_)).children().index() == -1 && window.iphonedObj == true)){				
+										if( ($('.'+lang_+'Class').children().eq(Number(index_)).children().index() == -1 && i != 1) || ($('.'+lang_+'Class').children().eq(Number(index_)).children().index() == -1 && window.androidObj == true) || ($('.'+lang_+'Class').children().eq(Number(index_)).children().index() == -1 && window.iphoneObj == true)){				
 											$('.'+lang_+'Class').children().eq(Number(index_)).load(''+html_+'');
 										}
 										
@@ -517,27 +544,20 @@ $(function(){
     /////////////////////////////
 	window.resizeTimer = null;
     $(window).resize(function(){
+	
+		//ujra allitjuk atmeretezesnel a margok meretet a tartalmi matrixban
+		contentMargoFn();
 		
-//		window.resizeTimer = setInterval(function(){
-
-			//ujra allitjuk atmeretezesnel a margok meretet a tartalmi matrixban
-			contentMargoFn();
-			
-			//zoom meretek beallitasa az osszes betoltott tartalomra
-			window.zoomFn();
-			
-			if(android2Obj == false){//Android 2.x eseteben NEM hajtja vegre
-				$('html, body').stop(false,false).animate({
-							scrollTop:  ''+String(($('.langContainer').children().eq(Number(contentPosJSON[''+window.hashObj[0]+'']['index'])).offset().top)  - (window.topBottomMargin) )+'px'
-				}, 500);
-			} else {//Android 2.x eseteben EZT hajtja vegre
-				//azert kell ez a megkulonboztetes, hogy a kis felbontasu kepernyonel mindig a fejlecre pozicionaljon pont
-/*				$('html, body').stop(false,false).animate({
-							scrollTop:  ''+String(($('.langContainer').children().eq(Number(contentPosJSON[''+window.hashObj[0]+'']['index'])).find('.container').find('.header').offset().top))+'px'
-				}, 500);
-*/			}
-//			clearInterval(window.resizeTimer);
-//		},50);
+		//zoom meretek beallitasa az osszes betoltott tartalomra
+		window.zoomFn();
+		
+		if(android2Obj == false){//Android 2.x eseteben NEM hajtja vegre
+			$('html, body').stop(false,false).animate({
+						scrollTop:  ''+String(($('.langContainer').children().eq(Number(contentPosJSON[''+window.hashObj[0]+'']['index'])).offset().top)  - (window.topBottomMargin) )+'px'
+			}, 500);
+		} else {//Android 2.x eseteben EZT hajtja vegre
+			//azert kell ez a megkulonboztetes, hogy a kis felbontasu kepernyonel mindig a fejlecre pozicionaljon pont
+		}
 
     });
 
@@ -596,14 +616,14 @@ $(function(){
     // kiszamoljuk a tartalmi matrixon beluli elemeknek az egymastol valo fuggoleges margojat
     ////////////////////////////////////////////////////////////////////////////////////////
    function contentMargoFn(){
-	   if(window.iphonedObj == false || window.android2Obj == false){
+	   if(window.iphoneObj == false || window.android2Obj == false){
 			//a kiskepernyos eszkozok miatt kell megadni a body meretet
 			$('body').css({
 				height:''+$('#containerLayer').height()+'px',
 				 width:''+$(window).width()+'px'
 			});
 	   }
-	   if(window.iphonedObj == true || window.android2Obj == true){
+	   if(window.iphoneObj == true || window.android2Obj == true){
 			$('body').css({
 				height:'5000px',
 				 width:''+$(window).width()+'px'
@@ -614,7 +634,7 @@ $(function(){
 	   window.winHeight = $(window).height();
 	   
 	   //iphone eseteben mashogy adjuk meg a blokkok kozotti margot
-	   if(window.iphonedObj == false){
+	   if(window.iphoneObj == false){
 		   if(window.winHeight <= 620){
 				$('.contentContainer').css({height:'620px'});
 				//also/felso margo mereteket szamoljuk ki
@@ -624,7 +644,7 @@ $(function(){
 				window.topBottomMargin = ((window.winHeight - $('.contentContainer').height()) / 2) >> 0;
 			}
 	   }
-	   if(window.iphonedObj == true){
+	   if(window.iphoneObj == true){
 			window.topBottomMargin = 120;	   
 	   }
 	   else if(window.topBottomMargin < 50 && window.androidObj == true){
@@ -642,7 +662,7 @@ $(function(){
 		}
 		$('.contentContainer').css({marginTop:''+window.topBottomMargin+'px',marginBottom:''+window.topBottomMargin+'px'});
 		
-	   if(window.iphonedObj == false){
+	   if(window.iphoneObj == false){
 			//beallitjuk az oldal animacios kontenerenek a magassagat
 			if(containerLayerHeight < 6000){
 				containerLayerHeight = 6000;
@@ -661,19 +681,17 @@ $(function(){
 
 		var styleStr = "";//"<style type=\"text/css\">.container{zoom:50%;}<\/style>";
 				
-//		if(navigator.userAgent.toLowerCase().indexOf('android 2.') != -1) 
-
 		window.winHeight = $(window).height();
 		window.winWidth = $(window).width();
 	
-	   if( (window.iphonedObj == true || window.android2Obj == true) && window.winWidth < window.winHeight){
+	   if( (window.iphoneObj == true || window.android2Obj == true) && window.winWidth < window.winHeight){
 			$('body').css({
 				height:'9000px',
 				 width:''+$(window).width()+'px'
 			});
 	   }
 		
-		if( (androidObj == true || iphonedObj == true) && !$.browser.msie && $(window).width() <= 990){
+		if( (androidObj == true || iphoneObj == true) && !$.browser.msie && $(window).width() <= 990){
 		
 			window.bigSizeObj = window.winHeight > window.winWidth ? window.winHeight : window.winWidth ;
 				
@@ -687,10 +705,6 @@ $(function(){
 										marginLeft: '-1150px',
 										marginTop:'-47%'
 				});						
-
-//				styleStr = "<style type=\"text/css\">.container{zoom:20%;}<\/style>";
-//				styleStr = "<style type=\"text/css\">.langContainer{zoom:40%;}<\/style>";
-//				$('.styleTagClass').html(styleStr);
 							
 			}
 			else if(640 == window.bigSizeObj){//Motorola
@@ -755,7 +769,7 @@ $(function(){
 				
 				} else {//Android 2.x eseteben NEM hajtja vegre
 					//NEM erinto kepernyon VEGRE hajtja
-					if(window.androidObj == false && window.iphonedObj == false){
+					if(window.androidObj == false && window.iphoneObj == false){
 						dbTouchObj++;
 						
 						if(dbTouchObj != 1){
@@ -781,7 +795,7 @@ $(function(){
 				
 			}catch(e){}
 		} else {
-			if(e.type == "touch" || e.type == "click" || e.type == "touchend" || (e.type == "touchmove" && android2Obj == true) || window.iphonedObj == true){
+			if(e.type == "touch" || e.type == "click" || e.type == "touchend" || (e.type == "touchmove" && android2Obj == true) || window.iphoneObj == true){
 				if($targObj.hasClass('_hash') == true){
 					window.location.hash = $targObj.attr('class').substr('6');
 				}
@@ -796,7 +810,7 @@ $(function(){
 				}
 				return;
 			}
-			if(window.androidObj == false && window.iphonedObj == false){
+			if(window.androidObj == false && window.iphoneObj == false){
 				cancelEvent(e);
 			}
 		}
