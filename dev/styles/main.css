@@ -437,7 +437,7 @@ body {
 
 /********** CV **********/
 
-.cv_content h2, .cv_content h3, .cv_content p { position: relative; width: 650px; }
+.cv_content h2, .cv_content h3, .cv_content p { position: relative; width: 650px; margin-bottom: 13px; }
 .cv_content .viewport li { position: relative; width: 615px; }
 .cv_content .viewport li p { position: relative; width: 615px !important; margin: 0; }
 
@@ -459,6 +459,14 @@ body {
 .cv_content strong { font-weight: normal; color: #424242; }
 .cv_content strong a { color: #424242; }
 .cv_content p a { color: #999; }
+
+.cv_contact {
+	margin-top: 130px;
+}
+
+.cv_contact h1 {
+	margin: 30px 0 30px 0;
+}
 
 .button {
 	float: right;
