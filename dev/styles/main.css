@@ -461,7 +461,7 @@ body {
 .cv_content p a { color: #999; }
 
 .cv_contact {
-	margin-top: 130px;
+	margin-top: 0px;
 }
 
 .cv_contact h1 {
@@ -578,6 +578,7 @@ body {
 	margin: 0;
 	padding: 0;
 	list-style: none;
+	margin-top:130px;
 }
 
 	.contact_lines li {
