@@ -186,27 +186,27 @@ window.contentPosJSON = {
 				'ENG':'home',
 				'ESP':'casa'
 			},
-			'1':{
+/*			'1':{
 				'HU':'bemutatkozas',
 				'ENG':'introduction',
 				'ESP':'presentacion'
-			},
-			'2':{
+			},*/
+			'1':{
 				'HU':'oneletrajz',
 				'ENG':'cv',
 				'ESP':'cv_esp'
 			},
-			'3':{
+/*			'3':{
 				'HU':'a_cv_mogott',
 				'ENG':'behind_the_cv',
 				'ESP':'detras_de_cv'
-			},
-			'4':{
+			},*/
+			'2':{
 				'HU':'referenciak',
 				'ENG':'references',
 				'ESP':'referencias'
 			},
-			'5':{
+			'3':{
 				'HU':'kapcsolat',
 				'ENG':'contact',
 				'ESP':'contacto'
@@ -218,29 +218,29 @@ window.contentPosJSON = {
             'index': '0',
 			'lang': 'hu'
         },
+        'oneletrajz': {
+            'url': 'hu/HU_3_cv.html',
+            'index': '1',
+			'lang': 'hu'
+        },
+        'referenciak': {
+            'url': 'hu/HU_5_ref.html',
+            'index': '2',
+			'lang': 'hu'
+        },
+        'kapcsolat': {
+            'url': 'hu/HU_6_cont.html',
+            'index': '3',
+			'lang': 'hu'
+        },
         'bemutatkozas': {
             'url': 'hu/HU_2_intro.html',
             'index': '1',
 			'lang': 'hu'
         },
-        'oneletrajz': {
-            'url': 'hu/HU_3_cv.html',
-            'index': '2',
-			'lang': 'hu'
-        },
         'a_cv_mogott': {
             'url': 'hu/HU_4_behind.html',
             'index': '3',
-			'lang': 'hu'
-        },
-        'referenciak': {
-            'url': 'hu/HU_5_ref.html',
-            'index': '4',
-			'lang': 'hu'
-        },
-        'kapcsolat': {
-            'url': 'hu/HU_6_cont.html',
-            'index': '5',
 			'lang': 'hu'
         },
 		
@@ -250,29 +250,29 @@ window.contentPosJSON = {
             'index': '0',
 			'lang': 'en'
         },
+        'cv': {
+            'url': 'en/EN_3_cv.html',
+            'index': '1',
+			'lang': 'en'
+        },
+        'references': {
+            'url': 'en/EN_5_ref.html',
+            'index': '2',
+			'lang': 'en'
+        },
+        'contact': {
+            'url': 'en/EN_6_cont.html',
+            'index': '3',
+			'lang': 'en'
+        },
         'introduction': {
             'url': 'en/EN_2_intro.html',
             'index': '1',
 			'lang': 'en'
         },
-        'cv': {
-            'url': 'en/EN_3_cv.html',
-            'index': '2',
-			'lang': 'en'
-        },
         'behind_the_cv': {
             'url': 'en/EN_4_behind.html',
             'index': '3',
-			'lang': 'en'
-        },
-        'references': {
-            'url': 'en/EN_5_ref.html',
-            'index': '4',
-			'lang': 'en'
-        },
-        'contact': {
-            'url': 'en/EN_6_cont.html',
-            'index': '5',
 			'lang': 'en'
         },
 		
@@ -282,29 +282,29 @@ window.contentPosJSON = {
             'index': '0',
 			'lang': 'es'
         },
+        'cv_esp': {
+            'url': 'es/ES_3_cv.html',
+            'index': '1',
+			'lang': 'es'
+        },
+        'referencias': {
+            'url': 'es/ES_5_ref.html',
+            'index': '2',
+			'lang': 'es'
+        },
+        'contacto': {
+            'url': 'es/ES_6_cont.html',
+            'index': '3',
+			'lang': 'es'
+        },
         'presentacion': {
             'url': 'es/ES_2_intro.html',
             'index': '1',
 			'lang': 'es'
         },
-        'cv_esp': {
-            'url': 'es/ES_3_cv.html',
-            'index': '2',
-			'lang': 'es'
-        },
         'detras_de_cv': {
             'url': 'es/ES_4_behind.html',
             'index': '3',
-			'lang': 'es'
-        },
-        'referencias': {
-            'url': 'es/ES_5_ref.html',
-            'index': '4',
-			'lang': 'es'
-        },
-        'contacto': {
-            'url': 'es/ES_6_cont.html',
-            'index': '5',
 			'lang': 'es'
         }
 };
@@ -451,7 +451,7 @@ $(function(){
 								if (textStatus == "success") {
 									//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 									// miutan betoltottuk az aktualis tartalmat beajaxolunk minden tartalmat, kiveve a videokat, hogy a mobil netet ne foglaljuk foloslegesen
-									for(var i=0;i<6;i++){
+									for(var i=0;contentPosJSON.indexedContents[''+i+''] !== undefined;i++){
 										var index_ = contentPosJSON[''+contentPosJSON['indexedContents'][''+i+'']['HU']+''].index;
 										var lang_ = contentPosJSON[''+contentPosJSON['indexedContents'][''+i+'']['HU']+''].lang;
 										var html_ = contentPosJSON[''+contentPosJSON['indexedContents'][''+i+'']['HU']+''].url;
@@ -461,7 +461,7 @@ $(function(){
 										}
 																		
 									}
-									for(var i=0;i<6;i++){
+									for(var i=0;contentPosJSON.indexedContents[''+i+''] !== undefined;i++){
 										var index_ = contentPosJSON[''+contentPosJSON['indexedContents'][''+i+'']['ENG']+''].index;
 										var lang_ = contentPosJSON[''+contentPosJSON['indexedContents'][''+i+'']['ENG']+''].lang;
 										var html_ = contentPosJSON[''+contentPosJSON['indexedContents'][''+i+'']['ENG']+''].url;
@@ -472,7 +472,7 @@ $(function(){
 										}
 										
 									}
-									for(var i=0;i<6;i++){
+									for(var i=0;contentPosJSON.indexedContents[''+i+''] !== undefined;i++){
 										var index_ = contentPosJSON[''+contentPosJSON['indexedContents'][''+i+'']['ESP']+''].index;
 										var lang_ = contentPosJSON[''+contentPosJSON['indexedContents'][''+i+'']['ESP']+''].lang;
 										var html_ = contentPosJSON[''+contentPosJSON['indexedContents'][''+i+'']['ESP']+''].url;

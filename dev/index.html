@@ -20,19 +20,45 @@
 		<meta name="description" content="">
 		<meta name="keywords" content="">
 		
-                <link type="image/ico" rel="Shortcut Icon" href="images/favicon.ico"> 
+        <link type="image/ico" rel="Shortcut Icon" href="images/favicon.ico"> 
                 
-                <link href="http://fustos.com/styles/main.css" rel="stylesheet" type="text/css" />
-                <link href="http://fustos.com/styles/lightbox.css" rel="stylesheet" type="text/css" />
-                
+        <link href="styles/main.css" rel="stylesheet" type="text/css" />
+        <link href="styles/lightbox.css" rel="stylesheet" type="text/css" />
+			
+		<script>
+			//csak akkor "true" ha az eles oldalon fut le a kod
+			//egyebken nem statisztikaz
+			window.originSite = true;//window.location.href.indexOf('fustos.com/dev/') == -1;
+			window.hostIPObj = 'unidentified';
+			
+			if(window.originSite){
+
+				(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+				(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+				m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+				})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+				
+				if(window.location.hostname.indexOf('fustos.com') != -1){
+					ga('create', 'UA-51321811-1', 'fustos.com');
+				} else if(window.location.hostname.indexOf('fustos.es') != -1){
+					ga('create', 'UA-51321811-2', 'fustos.es');
+				} else if(window.location.hostname.indexOf('fustos.hu') != -1){
+					ga('create', 'UA-51321811-3', 'fustos.hu');
+				}		  
+
+				ga('send', 'pageview');
+
+			}
+		</script>
+								
         <!-- optimalised jQuery v1.9 / old v1.4.4 -->
         <script type="text/javascript" src=" http://code.jquery.com/jquery-2.0.0.min.js"></script>
         
-                <script type="text/javascript" src="http://cdn.jquerytools.org/1.2.5/full/jquery.tools.min.js"></script>
-                <script type="text/javascript" src="http://fustos.com/scripts/jquery.easing.js"></script>
-                <script type="text/javascript" src="http://fustos.com/scripts/jquery.fancybox.js"></script>
-                <script type="text/javascript" src="http://fustos.com/scripts/smoothscroll.js"></script>
-                <script type="text/javascript" src="http://fustos.com/scripts/jquery.tinyscrollbar.min.js"></script>
+        <script type="text/javascript" src="http://cdn.jquerytools.org/1.2.5/full/jquery.tools.min.js"></script>
+        <script type="text/javascript" src="http://fustos.com/scripts/jquery.easing.js"></script>
+        <script type="text/javascript" src="http://fustos.com/scripts/jquery.fancybox.js"></script>
+        <script type="text/javascript" src="http://fustos.com/scripts/smoothscroll.js"></script>
+        <script type="text/javascript" src="http://fustos.com/scripts/jquery.tinyscrollbar.min.js"></script>
 				
 
 
@@ -46,7 +72,6 @@
     #maskLayer {
     		width: 100%;
     		height:100%;
-    		/*overflow:hidden;*/
 			overflow-x:hidden;
     }
     .contentContainer {
@@ -56,7 +81,6 @@
         width: 990px;
         height: 610px;
         margin: auto;
-/*        overflow:hidden;*/
     }
 	.contentContainer .container {
 		zoom: 100%;
@@ -81,7 +105,6 @@
 		overflow:hidden;
     }
 	.footer {
-		/*margin:0px 0px 10px -450px;*/
 	}
 	.langs {
 		pointer-events: none;
@@ -144,7 +167,146 @@
 <!-- </div> -->
 </div>
 <script language="javascript" type="text/javascript">
-	window.contentPosJSON={domain:{hu:"HU",com:"ENG",es:"ESP"},indexedContents:{"0":{HU:"kezdolap",ENG:"home",ESP:"casa"},"1":{HU:"bemutatkozas",ENG:"introduction",ESP:"presentacion"},"2":{HU:"oneletrajz",ENG:"cv",ESP:"cv_esp"},"3":{HU:"a_cv_mogott",ENG:"behind_the_cv",ESP:"detras_de_cv"},"4":{HU:"referenciak",ENG:"references",ESP:"referencias"},"5":{HU:"kapcsolat",ENG:"contact",ESP:"contacto"}},kezdolap:{url:"hu/HU_1_af.html",index:"0",lang:"hu"},bemutatkozas:{url:"hu/HU_2_intro.html",index:"1",lang:"hu"},oneletrajz:{url:"hu/HU_3_cv.html",index:"2",lang:"hu"},a_cv_mogott:{url:"hu/HU_4_behind.html",index:"3",lang:"hu"},referenciak:{url:"hu/HU_5_ref.html",index:"4",lang:"hu"},kapcsolat:{url:"hu/HU_6_cont.html",index:"5",lang:"hu"},home:{url:"en/EN_1_af.html",index:"0",lang:"en"},introduction:{url:"en/EN_2_intro.html",index:"1",lang:"en"},cv:{url:"en/EN_3_cv.html",index:"2",lang:"en"},behind_the_cv:{url:"en/EN_4_behind.html",index:"3",lang:"en"},references:{url:"en/EN_5_ref.html",index:"4",lang:"en"},contact:{url:"en/EN_6_cont.html",index:"5",lang:"en"},casa:{url:"es/ES_1_af.html",index:"0",lang:"es"},presentacion:{url:"es/ES_2_intro.html",index:"1",lang:"es"},cv_esp:{url:"es/ES_3_cv.html",index:"2",lang:"es"},detras_de_cv:{url:"es/ES_4_behind.html",index:"3",lang:"es"},referencias:{url:"es/ES_5_ref.html",index:"4",lang:"es"},contacto:{url:"es/ES_6_cont.html",index:"5",lang:"es"}},window.log=function(n){console.log(n)},$(function(){function f(){(window.iphonedObj==!1||window.android2Obj==!1)&&$("body").css({height:""+$("#containerLayer").height()+"px",width:""+$(window).width()+"px"}),(window.iphonedObj==!0||window.android2Obj==!0)&&$("body").css({height:"5000px",width:""+$(window).width()+"px"}),window.winHeight=$(window).height(),window.iphonedObj==!1&&(window.winHeight<=620?($(".contentContainer").css({height:"620px"}),window.topBottomMargin=0):window.topBottomMargin=(window.winHeight-$(".contentContainer").height())/2>>0),window.iphonedObj==!0?window.topBottomMargin=120:window.topBottomMargin<50&&window.androidObj==!0&&(window.topBottomMargin=50),n=$("#containerLayer").children(),r=n.eq(0).children().size(),containerLayerHeight=window.winHeight*r-(r-2)*window.topBottomMargin,window.topBottomMargin<=0&&(window.topBottomMargin=window.topBottomMargin*-1),$(".contentContainer").css({marginTop:""+window.topBottomMargin+"px",marginBottom:""+window.topBottomMargin+"px"}),window.iphonedObj==!1&&(containerLayerHeight<6e3&&(containerLayerHeight=6e3),$("#containerLayer").css({height:""+containerLayerHeight+"px"}))}function e(n){var i=document;i!=null&&(i.addEventListener?(n=="mousewheel"&&i.addEventListener("DOMMouseScroll",t,!1),i.addEventListener(n,t,!1),n=="touchmove"&&i.addEventListener(n,t,!1)):i.attachEvent&&i.attachEvent("on"+n,t))}function o(n){n=n||window.event;var t=n.target||n.srcElement;return t.nodeType==3&&(t=t.parentNode),t}function u(n){try{n=n?n:window.event,n.stopPropagation&&n.stopPropagation(),n.preventDefault&&n.preventDefault(),n.cancelBubble=!0,n.cancel=!0,n.returnValue=!1}catch(n){}return!1}var t=new u,n,r,i;e("mousewheel"),$("html, body").stop(!1,!1).delay(100).animate({scrollTop:"0px"},{duration:100,complete:function(){$("#containerLayer").css({visibility:"visible"})}}),n=0,r=0,window.androidObj=navigator.userAgent.toLowerCase().indexOf("android")!=-1||!1,window.android2Obj=navigator.userAgent.toLowerCase().indexOf("android 2.")!=-1||!1,window.iphonedObj=navigator.userAgent.toLowerCase().indexOf("iphone")!=-1||!1,(window.android2Obj==!0||window.iphonedObj==!0)&&$("body, html").css({minHeight:"4200px"}),(window.androidObj==!0||window.iphonedObj==!0)&&$("#containerLayer").css({position:"relative"}),window.winHeight=0,window.topBottomMargin=0,containerLayerHeight=0,f(),window.hashChangeTimer=null,window.hashObj=null,window.lastJSONIndex=null,window.langActual="",function(){function n(){var t=$("#containerLayer").children(),u,i,n,r;try{if(window.hashObj=window.location.hash.split("/"),window.hashObj[0]=hashObj[0].replace("#",""),window.hashObj[0]==""){u=window.location.hostname.split("."),window.location.hash=contentPosJSON.indexedContents["0"][""+window.contentPosJSON.domain[""+u[u.length-1]+""]+""];return}i=contentPosJSON[""+window.hashObj[0]+""].index,window.lastJSONIndex=i,n=contentPosJSON[""+window.hashObj[0]+""].lang,n=="es"&&t.eq(1).hasClass("huClass")&&animateRightFn(),n=="en"&&t.eq(1).hasClass("huClass")&&animateLeftFn(),n=="en"&&t.eq(1).hasClass("esClass")&&animateRightFn(),n=="hu"&&t.eq(1).hasClass("esClass")&&animateLeftFn(),n=="hu"&&t.eq(1).hasClass("enClass")&&animateRightFn(),n=="es"&&t.eq(1).hasClass("enClass")&&animateLeftFn(),r=null;function f(){$("."+n+"Class").children().eq(Number(i)).children().index()==-1&&(r=contentPosJSON[""+window.hashObj[0]+""].url,$("."+n+"Class").children().eq(Number(i)).load(""+r+"",function(n,t){var r,o;if(t=="success"){for(r=0;r<6;r++){var f=contentPosJSON[""+contentPosJSON.indexedContents[""+r+""].HU+""].index,u=contentPosJSON[""+contentPosJSON.indexedContents[""+r+""].HU+""].lang,e=contentPosJSON[""+contentPosJSON.indexedContents[""+r+""].HU+""].url;($("."+u+"Class").children().eq(Number(f)).children().index()==-1&&r!=1||$("."+u+"Class").children().eq(Number(f)).children().index()==-1&&window.androidObj==!0||$("."+u+"Class").children().eq(Number(f)).children().index()==-1&&window.iphonedObj==!0)&&$("."+u+"Class").children().eq(Number(f)).load(""+e+"")}for(r=0;r<6;r++){var f=contentPosJSON[""+contentPosJSON.indexedContents[""+r+""].ENG+""].index,u=contentPosJSON[""+contentPosJSON.indexedContents[""+r+""].ENG+""].lang,e=contentPosJSON[""+contentPosJSON.indexedContents[""+r+""].ENG+""].url;($("."+u+"Class").children().eq(Number(f)).children().index()==-1&&r!=1||$("."+u+"Class").children().eq(Number(f)).children().index()==-1&&window.androidObj==!0||$("."+u+"Class").children().eq(Number(f)).children().index()==-1&&window.iphonedObj==!0)&&$("."+u+"Class").children().eq(Number(f)).load(""+e+"")}for(r=0;r<6;r++){var f=contentPosJSON[""+contentPosJSON.indexedContents[""+r+""].ESP+""].index,u=contentPosJSON[""+contentPosJSON.indexedContents[""+r+""].ESP+""].lang,e=contentPosJSON[""+contentPosJSON.indexedContents[""+r+""].ESP+""].url;($("."+u+"Class").children().eq(Number(f)).children().index()==-1&&r!=1||$("."+u+"Class").children().eq(Number(f)).children().index()==-1&&window.androidObj==!0||$("."+u+"Class").children().eq(Number(f)).children().index()==-1&&window.iphonedObj==!0)&&$("."+u+"Class").children().eq(Number(f)).load(""+e+"")}o=0}t=="error"}))}f(),(window.langActual==n||window.langActual=="")&&(android2Obj==!0?$("html, body").stop(!1,!1).animate({scrollTop:""+String($(".langContainer").children().eq(Number(contentPosJSON[""+window.hashObj[0]+""].index)).offset().top-window.topBottomMargin)+"px"},500):$("html, body").animate({scrollTop:""+String($(".langContainer").children().eq(Number(contentPosJSON[""+window.hashObj[0]+""].index)).offset().top-window.topBottomMargin)+"px"},500)),window.langActual=n}catch(e){return clearInterval(window.hashChangeTimer),!1}}window.loadTimer=setInterval(function(){try{n(),window.zoomFn()}catch(t){clearInterval(window.loadTimer)}clearInterval(window.loadTimer)},100),$(window).bind("hashchange",function(){window.hashChangeTimer=setInterval(function(){try{n()}catch(t){return clearInterval(window.hashChangeTimer),!1}clearInterval(window.hashChangeTimer)},100)})}($),window.resizeTimer=null,$(window).resize(function(){f(),window.zoomFn(),android2Obj==!1&&$("html, body").stop(!1,!1).animate({scrollTop:""+String($(".langContainer").children().eq(Number(contentPosJSON[""+window.hashObj[0]+""].index)).offset().top-window.topBottomMargin)+"px"},500)}),window.animateLeftFn=function(){$("#containerLayer").stop(!1,!1).delay(500).animate({marginLeft:"-200%"},{complete:function(){n.last().after(n.first()),n=$("#containerLayer").children(),$("#containerLayer").css({marginLeft:"-100%"}),$("html, body").stop(!1,!1).delay(500).animate({scrollTop:String($(".langContainer").children().eq(Number(contentPosJSON[""+window.hashObj[0]+""].index)).offset().top-window.topBottomMargin)},{complete:function(){}})}})},window.animateRightFn=function(){$("#containerLayer").stop(!1,!1).delay(500).animate({marginLeft:"0%"},{complete:function(){n.first().before(n.last()),n=$("#containerLayer").children(),$("#containerLayer").css({marginLeft:"-100%"}),$("html, body").stop(!1,!1).animate({scrollTop:String($(".langContainer").children().eq(Number(contentPosJSON[""+window.hashObj[0]+""].index)).offset().top-window.topBottomMargin)},{complete:function(){}})}})},window.zoomFn_=function(){},window.zoomFn=function(){var n="";window.winHeight=$(window).height(),window.winWidth=$(window).width(),(window.iphonedObj==!0||window.android2Obj==!0)&&window.winWidth<window.winHeight&&$("body").css({height:"9000px",width:""+$(window).width()+"px"}),(androidObj==!0||iphonedObj==!0)&&!$.browser.msie&&$(window).width()<=990&&(window.bigSizeObj=window.winHeight>window.winWidth?window.winHeight:window.winWidth,$(".container").size()==1,480==window.bigSizeObj?$(".container").css({zoom:"40%",marginLeft:"-1150px",marginTop:"-47%"}):640==window.bigSizeObj?$(".container").css({zoom:"40%",marginLeft:"-950px",marginTop:"-43%"}):960<=window.bigSizeObj&&$(".container").css({zoom:"60%",marginLeft:"-550px",marginTop:"-45%"}))},$(window).scroll(function(){}),i=0,window.dbTouchTimer=null,$(document).bind("mousewheel mousemove touchmove touchstart doubletap click",function(n){var t=$(o(n));if(n.type=="touchstart")try{if(android2Obj!=!0&&window.androidObj==!1&&window.iphonedObj==!1){if(i++,i!=1){try{u(n),clearInterval(window.dbTouchTimer),window.dbTouchTimer=setInterval(function(){i=0,clearInterval(window.dbTouchTimer)},500)}catch(n){}return}window.dbTouchTimer=setInterval(function(){i=0,clearInterval(window.dbTouchTimer)},500)}}catch(n){}else{if(n.type=="touch"||n.type=="click"||n.type=="touchend"||n.type=="touchmove"&&android2Obj==!0||window.iphonedObj==!0){t.hasClass("_hash")==!0&&(window.location.hash=t.attr("class").substr("6")),t.hasClass("next")==!0&&n.type!="touchmove"&&(window.location.hash=contentPosJSON.indexedContents[""+window.lastJSONIndex+""][""+t.text()+""]),t.hasClass("prev")==!0&&n.type!="touchmove"&&(window.location.hash=contentPosJSON.indexedContents[""+window.lastJSONIndex+""][""+t.text()+""]);return}window.androidObj==!1&&window.iphonedObj==!1&&u(n)}}),window.miniLangBtnFn=function(n){window.location.hash=contentPosJSON.indexedContents[""+window.lastJSONIndex+""][""+n+""]},window.scrollNGaleryInitFn=function(){window.zoomFn(),$("#hu_cv_scroll, #en_cv_scroll, #esp_cv_scroll, #hu_cv_mogott_scroll, #en_cv_mogott_scroll, #esp_cv_mogott_scroll").tinyscrollbar(),$("#hu_gallery_scroll, #en_gallery_scroll, #esp_gallery_scroll").tinyscrollbar({axis:"x"}),$("a.overlay").fancybox({padding:0,margin:80,speedIn:600,speedOut:200,overlayShow:!0,overlayOpacity:.8,overlayColor:"#fff",onStart:function(){$(".browse").animate({opacity:0},600)},onCleanup:function(){$(".browse").animate({opacity:1},600)}}),$("a.iframe").fancybox({autoScale:!1,scrolling:!0,padding:0,margin:80,speedIn:600,speedOut:200,width:650,height:600,overlayShow:!0,overlayOpacity:.8,overlayColor:"#fff",onStart:function(){$(".browse").animate({opacity:0},600)},onCleanup:function(){$(".browse").animate({opacity:1},600)}})}});
+/////////////////////////////////////
+//hash szinkonhoz keszult ajax vezerles es oldal pozicionalast segito JSON 
+//egy pelda: #contacto == "contentPosJSON['contacto']['lang'];"
+window.contentPosJSON = {	
+		'domain':{// domain vegzodesek iranyabol inicializalo bejegyzes, amivel at tudjuk nyelvesiteni a legelso hash erteket
+			'hu':'HU',
+			'com':'ENG',
+			'es':'ESP'
+		},
+
+		'indexedContents':{
+			'0':{// ezek az indexelt tartalmak a nyelvek kozotti valtasokra inicializalnak ertekeket
+				'HU':'kezdolap',
+				'ENG':'home',
+				'ESP':'casa'
+			},
+/*			'1':{
+				'HU':'bemutatkozas',
+				'ENG':'introduction',
+				'ESP':'presentacion'
+			},*/
+			'1':{
+				'HU':'oneletrajz',
+				'ENG':'cv',
+				'ESP':'cv_esp'
+			},
+/*			'3':{
+				'HU':'a_cv_mogott',
+				'ENG':'behind_the_cv',
+				'ESP':'detras_de_cv'
+			},*/
+			'2':{
+				'HU':'referenciak',
+				'ENG':'references',
+				'ESP':'referencias'
+			},
+			'3':{
+				'HU':'kapcsolat',
+				'ENG':'contact',
+				'ESP':'contacto'
+			}
+		},
+		
+        'kezdolap': {// tobb nyelvu hash tartalmak adat strukturaja
+            'url': 'hu/HU_1_af.html',
+            'index': '0',
+			'lang': 'hu'
+        },
+        'oneletrajz': {
+            'url': 'hu/HU_3_cv.html',
+            'index': '1',
+			'lang': 'hu'
+        },
+        'referenciak': {
+            'url': 'hu/HU_5_ref.html',
+            'index': '2',
+			'lang': 'hu'
+        },
+        'kapcsolat': {
+            'url': 'hu/HU_6_cont.html',
+            'index': '3',
+			'lang': 'hu'
+        },
+        'bemutatkozas': {
+            'url': 'hu/HU_2_intro.html',
+            'index': '1',
+			'lang': 'hu'
+        },
+        'a_cv_mogott': {
+            'url': 'hu/HU_4_behind.html',
+            'index': '3',
+			'lang': 'hu'
+        },
+		
+		
+        'home': {
+            'url': 'en/EN_1_af.html',
+            'index': '0',
+			'lang': 'en'
+        },
+        'cv': {
+            'url': 'en/EN_3_cv.html',
+            'index': '1',
+			'lang': 'en'
+        },
+        'references': {
+            'url': 'en/EN_5_ref.html',
+            'index': '2',
+			'lang': 'en'
+        },
+        'contact': {
+            'url': 'en/EN_6_cont.html',
+            'index': '3',
+			'lang': 'en'
+        },
+        'introduction': {
+            'url': 'en/EN_2_intro.html',
+            'index': '1',
+			'lang': 'en'
+        },
+        'behind_the_cv': {
+            'url': 'en/EN_4_behind.html',
+            'index': '3',
+			'lang': 'en'
+        },
+		
+		
+        'casa': {
+            'url': 'es/ES_1_af.html',
+            'index': '0',
+			'lang': 'es'
+        },
+        'cv_esp': {
+            'url': 'es/ES_3_cv.html',
+            'index': '1',
+			'lang': 'es'
+        },
+        'referencias': {
+            'url': 'es/ES_5_ref.html',
+            'index': '2',
+			'lang': 'es'
+        },
+        'contacto': {
+            'url': 'es/ES_6_cont.html',
+            'index': '3',
+			'lang': 'es'
+        },
+        'presentacion': {
+            'url': 'es/ES_2_intro.html',
+            'index': '1',
+			'lang': 'es'
+        },
+        'detras_de_cv': {
+            'url': 'es/ES_4_behind.html',
+            'index': '3',
+			'lang': 'es'
+        }
+};
+
+window.log=function(n){console.log(n)},$(function(){function f(){(window.iphoneObj==!1||window.android2Obj==!1)&&$("body").css({height:""+$("#containerLayer").height()+"px",width:""+$(window).width()+"px"}),(window.iphoneObj==!0||window.android2Obj==!0)&&$("body").css({height:"5000px",width:""+$(window).width()+"px"}),window.winHeight=$(window).height(),window.iphoneObj==!1&&(window.winHeight<=620?($(".contentContainer").css({height:"620px"}),window.topBottomMargin=0):window.topBottomMargin=(window.winHeight-$(".contentContainer").height())/2>>0),window.iphoneObj==!0?window.topBottomMargin=120:window.topBottomMargin<50&&window.androidObj==!0&&(window.topBottomMargin=50),t=$("#containerLayer").children(),r=t.eq(0).children().size(),containerLayerHeight=window.winHeight*r-(r-2)*window.topBottomMargin,window.topBottomMargin<=0&&(window.topBottomMargin=window.topBottomMargin*-1),$(".contentContainer").css({marginTop:""+window.topBottomMargin+"px",marginBottom:""+window.topBottomMargin+"px"}),window.iphoneObj==!1&&(containerLayerHeight<6e3&&(containerLayerHeight=6e3),$("#containerLayer").css({height:""+containerLayerHeight+"px"}))}function e(t){var i=document;i!=null&&(i.addEventListener?(t=="mousewheel"&&i.addEventListener("DOMMouseScroll",n,!1),i.addEventListener(t,n,!1),t=="touchmove"&&i.addEventListener(t,n,!1)):i.attachEvent&&i.attachEvent("on"+t,n))}function o(n){n=n||window.event;var t=n.target||n.srcElement;return t.nodeType==3&&(t=t.parentNode),t}function u(n){try{n=n?n:window.event,n.stopPropagation&&n.stopPropagation(),n.preventDefault&&n.preventDefault(),n.cancelBubble=!0,n.cancel=!0,n.returnValue=!1}catch(n){}return!1}var n,t,r,i;$.getJSON("http://smart-ip.net/geoip-json?callback=?",function(n){window.hostIPObj=n.countryName+" - "+n.city+" - "+n.host}),n=new u,e("mousewheel"),$("html, body").stop(!1,!1).delay(100).animate({scrollTop:"0px"},{duration:100,complete:function(){$("#containerLayer").css({visibility:"visible"})}}),t=0,r=0,window.androidObj=navigator.userAgent.toLowerCase().indexOf("android")!=-1||!1,window.android2Obj=navigator.userAgent.toLowerCase().indexOf("android 2.")!=-1||!1,window.iphoneObj=navigator.userAgent.toLowerCase().indexOf("iphone")!=-1||!1,(window.android2Obj==!0||window.iphoneObj==!0)&&$("body, html").css({minHeight:"4200px"}),(window.androidObj==!0||window.iphoneObj==!0)&&$("#containerLayer").css({position:"relative"}),window.winHeight=0,window.topBottomMargin=0,containerLayerHeight=0,f(),window.hashChangeTimer=null,window.hashObj=null,window.lastJSONIndex=null,window.langActual="",function(){function n(){var t=$("#containerLayer").children(),r,i,n,u;try{if(window.hashObj=window.location.hash.split("/"),window.hashObj[0]=hashObj[0].replace("#",""),window.hashObj[0]==""){r=window.location.hostname.split("."),window.location.hash=contentPosJSON.indexedContents["0"][""+window.contentPosJSON.domain[""+r[r.length-1]+""]+""];return}i=contentPosJSON[""+window.hashObj[0]+""].index,window.lastJSONIndex=i,n=contentPosJSON[""+window.hashObj[0]+""].lang,window.originSite&&ga("send","event","UserLocation: "+window.hostIPObj+"",""+window.hostIPObj+" Lang: "+n+"",""+window.hostIPObj+" Content: "+window.location.hash+""),n=="es"&&t.eq(1).hasClass("huClass")&&animateRightFn(),n=="en"&&t.eq(1).hasClass("huClass")&&animateLeftFn(),n=="en"&&t.eq(1).hasClass("esClass")&&animateRightFn(),n=="hu"&&t.eq(1).hasClass("esClass")&&animateLeftFn(),n=="hu"&&t.eq(1).hasClass("enClass")&&animateRightFn(),n=="es"&&t.eq(1).hasClass("enClass")&&animateLeftFn(),u=null;function f(){$("."+n+"Class").children().eq(Number(i)).children().index()==-1&&(u=contentPosJSON[""+window.hashObj[0]+""].url,$("."+n+"Class").children().eq(Number(i)).load(""+u+"",function(n,t){var r,o;if(t=="success"){for(r=0;contentPosJSON.indexedContents[""+r+""]!==undefined;r++){var u=contentPosJSON[""+contentPosJSON.indexedContents[""+r+""].HU+""].index,f=contentPosJSON[""+contentPosJSON.indexedContents[""+r+""].HU+""].lang,e=contentPosJSON[""+contentPosJSON.indexedContents[""+r+""].HU+""].url;($("."+f+"Class").children().eq(Number(u)).children().index()==-1&&r!=1||$("."+f+"Class").children().eq(Number(u)).children().index()==-1&&window.androidObj==!0||$("."+f+"Class").children().eq(Number(u)).children().index()==-1&&window.iphoneObj==!0)&&$("."+f+"Class").children().eq(Number(u)).load(""+e+"")}for(r=0;contentPosJSON.indexedContents[""+r+""]!==undefined;r++){var u=contentPosJSON[""+contentPosJSON.indexedContents[""+r+""].ENG+""].index,f=contentPosJSON[""+contentPosJSON.indexedContents[""+r+""].ENG+""].lang,e=contentPosJSON[""+contentPosJSON.indexedContents[""+r+""].ENG+""].url;($("."+f+"Class").children().eq(Number(u)).children().index()==-1&&r!=1||$("."+f+"Class").children().eq(Number(u)).children().index()==-1&&window.androidObj==!0||$("."+f+"Class").children().eq(Number(u)).children().index()==-1&&window.iphoneObj==!0)&&$("."+f+"Class").children().eq(Number(u)).load(""+e+"")}for(r=0;contentPosJSON.indexedContents[""+r+""]!==undefined;r++){var u=contentPosJSON[""+contentPosJSON.indexedContents[""+r+""].ESP+""].index,f=contentPosJSON[""+contentPosJSON.indexedContents[""+r+""].ESP+""].lang,e=contentPosJSON[""+contentPosJSON.indexedContents[""+r+""].ESP+""].url;($("."+f+"Class").children().eq(Number(u)).children().index()==-1&&r!=1||$("."+f+"Class").children().eq(Number(u)).children().index()==-1&&window.androidObj==!0||$("."+f+"Class").children().eq(Number(u)).children().index()==-1&&window.iphoneObj==!0)&&$("."+f+"Class").children().eq(Number(u)).load(""+e+"")}o=0}t=="error"}))}f(),(window.langActual==n||window.langActual=="")&&(android2Obj==!0?$("html, body").stop(!1,!1).animate({scrollTop:""+String($(".langContainer").children().eq(Number(contentPosJSON[""+window.hashObj[0]+""].index)).offset().top-window.topBottomMargin)+"px"},500):$("html, body").animate({scrollTop:""+String($(".langContainer").children().eq(Number(contentPosJSON[""+window.hashObj[0]+""].index)).offset().top-window.topBottomMargin)+"px"},500)),window.langActual=n}catch(e){return clearInterval(window.hashChangeTimer),!1}}window.loadTimer=setInterval(function(){try{n(),window.zoomFn()}catch(t){clearInterval(window.loadTimer)}clearInterval(window.loadTimer)},100),$(window).bind("hashchange",function(){window.hashChangeTimer=setInterval(function(){try{n()}catch(t){return clearInterval(window.hashChangeTimer),!1}clearInterval(window.hashChangeTimer)},100)})}($),window.resizeTimer=null,$(window).resize(function(){f(),window.zoomFn(),android2Obj==!1&&$("html, body").stop(!1,!1).animate({scrollTop:""+String($(".langContainer").children().eq(Number(contentPosJSON[""+window.hashObj[0]+""].index)).offset().top-window.topBottomMargin)+"px"},500)}),window.animateLeftFn=function(){$("#containerLayer").stop(!1,!1).delay(500).animate({marginLeft:"-200%"},{complete:function(){t.last().after(t.first()),t=$("#containerLayer").children(),$("#containerLayer").css({marginLeft:"-100%"}),$("html, body").stop(!1,!1).delay(500).animate({scrollTop:String($(".langContainer").children().eq(Number(contentPosJSON[""+window.hashObj[0]+""].index)).offset().top-window.topBottomMargin)},{complete:function(){}})}})},window.animateRightFn=function(){$("#containerLayer").stop(!1,!1).delay(500).animate({marginLeft:"0%"},{complete:function(){t.first().before(t.last()),t=$("#containerLayer").children(),$("#containerLayer").css({marginLeft:"-100%"}),$("html, body").stop(!1,!1).animate({scrollTop:String($(".langContainer").children().eq(Number(contentPosJSON[""+window.hashObj[0]+""].index)).offset().top-window.topBottomMargin)},{complete:function(){}})}})},window.zoomFn_=function(){},window.zoomFn=function(){var n="";window.winHeight=$(window).height(),window.winWidth=$(window).width(),(window.iphoneObj==!0||window.android2Obj==!0)&&window.winWidth<window.winHeight&&$("body").css({height:"9000px",width:""+$(window).width()+"px"}),(androidObj==!0||iphoneObj==!0)&&!$.browser.msie&&$(window).width()<=990&&(window.bigSizeObj=window.winHeight>window.winWidth?window.winHeight:window.winWidth,$(".container").size()==1,480==window.bigSizeObj?$(".container").css({zoom:"40%",marginLeft:"-1150px",marginTop:"-47%"}):640==window.bigSizeObj?$(".container").css({zoom:"40%",marginLeft:"-950px",marginTop:"-43%"}):960<=window.bigSizeObj&&$(".container").css({zoom:"60%",marginLeft:"-550px",marginTop:"-45%"}))},$(window).scroll(function(){}),i=0,window.dbTouchTimer=null,$(document).bind("mousewheel mousemove touchmove touchstart doubletap click",function(n){var t=$(o(n));if(n.type=="touchstart")try{if(android2Obj!=!0&&window.androidObj==!1&&window.iphoneObj==!1){if(i++,i!=1){try{u(n),clearInterval(window.dbTouchTimer),window.dbTouchTimer=setInterval(function(){i=0,clearInterval(window.dbTouchTimer)},500)}catch(n){}return}window.dbTouchTimer=setInterval(function(){i=0,clearInterval(window.dbTouchTimer)},500)}}catch(n){}else{if(n.type=="touch"||n.type=="click"||n.type=="touchend"||n.type=="touchmove"&&android2Obj==!0||window.iphoneObj==!0){t.hasClass("_hash")==!0&&(window.location.hash=t.attr("class").substr("6")),t.hasClass("next")==!0&&n.type!="touchmove"&&(window.location.hash=contentPosJSON.indexedContents[""+window.lastJSONIndex+""][""+t.text()+""]),t.hasClass("prev")==!0&&n.type!="touchmove"&&(window.location.hash=contentPosJSON.indexedContents[""+window.lastJSONIndex+""][""+t.text()+""]);return}window.androidObj==!1&&window.iphoneObj==!1&&u(n)}}),window.miniLangBtnFn=function(n){window.location.hash=contentPosJSON.indexedContents[""+window.lastJSONIndex+""][""+n+""]},window.scrollNGaleryInitFn=function(){window.zoomFn(),$("#hu_cv_scroll, #en_cv_scroll, #esp_cv_scroll, #hu_cv_mogott_scroll, #en_cv_mogott_scroll, #esp_cv_mogott_scroll").tinyscrollbar(),$("#hu_gallery_scroll, #en_gallery_scroll, #esp_gallery_scroll").tinyscrollbar({axis:"x"}),$("a.overlay").fancybox({padding:0,margin:80,speedIn:600,speedOut:200,overlayShow:!0,overlayOpacity:.8,overlayColor:"#fff",onStart:function(){$(".browse").animate({opacity:0},600)},onCleanup:function(){$(".browse").animate({opacity:1},600)}}),$("a.iframe").fancybox({autoScale:!1,scrolling:!0,padding:0,margin:80,speedIn:600,speedOut:200,width:650,height:600,overlayShow:!0,overlayOpacity:.8,overlayColor:"#fff",onStart:function(){$(".browse").animate({opacity:0},600)},onCleanup:function(){$(".browse").animate({opacity:1},600)}})}});
 </script>
 </body>
 </html>
