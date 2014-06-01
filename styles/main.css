@@ -622,3 +622,10 @@ body {
 		margin: 20px 0 0 0;
 		font-size: 18px;
 	}
+	
+/********** Hidden buttons **********/
+.nav ul li.introduction, .nav ul li.behind_the_cv, 
+.nav ul li.presentacion, .nav ul li.detras_de_cv, 
+.nav ul li.bemutatkozas, .nav ul li.a_cv_mogott {
+	display: none;
+}
