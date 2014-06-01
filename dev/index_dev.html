@@ -443,8 +443,9 @@ $(function(){
 					if($('.'+lang+'Class').children().eq(Number(index)).children().index() == -1){
 					
 						html = contentPosJSON[''+window.hashObj[0]+'']['url'];
-				
-						$('.'+lang+'Class').children().eq(Number(index)).load(''+html+'', 
+						var timeStamp = new Date().getTime();
+						
+						$('.'+lang+'Class').children().eq(Number(index)).load(''+html+'?ts='+timeStamp+'', 
 						  function (responseText, textStatus, XMLHttpRequest) {
 							//csak akkor nem tolti le a blokkokat,ha 2.x-es android
 //							if(navigator.userAgent.toLowerCase().indexOf('android 2.') == -1){
@@ -457,7 +458,7 @@ $(function(){
 										var html_ = contentPosJSON[''+contentPosJSON['indexedContents'][''+i+'']['HU']+''].url;
 										
 										if( ($('.'+lang_+'Class').children().eq(Number(index_)).children().index() == -1 && i != 1) || ($('.'+lang_+'Class').children().eq(Number(index_)).children().index() == -1 && window.androidObj == true) || ($('.'+lang_+'Class').children().eq(Number(index_)).children().index() == -1 && window.iphoneObj == true)){				
-											$('.'+lang_+'Class').children().eq(Number(index_)).load(''+html_+'');
+											$('.'+lang_+'Class').children().eq(Number(index_)).load(''+html_+'?ts='+timeStamp+'');
 										}
 																		
 									}
@@ -468,7 +469,7 @@ $(function(){
 
 										
 										if( ($('.'+lang_+'Class').children().eq(Number(index_)).children().index() == -1 && i != 1) || ($('.'+lang_+'Class').children().eq(Number(index_)).children().index() == -1 && window.androidObj == true) || ($('.'+lang_+'Class').children().eq(Number(index_)).children().index() == -1 && window.iphoneObj == true)){				
-											$('.'+lang_+'Class').children().eq(Number(index_)).load(''+html_+'');
+											$('.'+lang_+'Class').children().eq(Number(index_)).load(''+html_+'?ts='+timeStamp+'');
 										}
 										
 									}
@@ -479,7 +480,7 @@ $(function(){
 
 										
 										if( ($('.'+lang_+'Class').children().eq(Number(index_)).children().index() == -1 && i != 1) || ($('.'+lang_+'Class').children().eq(Number(index_)).children().index() == -1 && window.androidObj == true) || ($('.'+lang_+'Class').children().eq(Number(index_)).children().index() == -1 && window.iphoneObj == true)){				
-											$('.'+lang_+'Class').children().eq(Number(index_)).load(''+html_+'');
+											$('.'+lang_+'Class').children().eq(Number(index_)).load(''+html_+'?ts='+timeStamp+'');
 										}
 										
 									}
