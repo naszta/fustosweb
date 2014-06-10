@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+		<title>Attila Fustos</title>
+		
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="language" content="Hungarian, English, Spanish" />
+		<meta name="doc-type" content="HTML5" />
+		<meta name="doc-class" content="Published" />
+		<meta name="distribution" content="Global" />
+		<meta name="resource-type" content="document" />
+		
+		<meta name="revisit-after" content="5 days" />
+		<meta name="robots" content="index,follow" />
+		<meta name="author" content="www.fustos.com" />
+		<meta name="copyright" content="Copyright (c) 2011 fustos.com" />
+		
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		
+		<link type="image/ico" rel="Shortcut Icon" href="images/favicon.ico"> 
+		
+<!--		<link href="http://fustos.com/styles/main.css" rel="stylesheet" type="text/css" /> -->
+		<link href="http://fustos.com/styles/lightbox.css" rel="stylesheet" type="text/css" />
+		
+        <!-- optimalised jQuery v1.9 / old v1.4.4 -->
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.0.min.js"></script>
+        
+		<script type="text/javascript" src="http://cdn.jquerytools.org/1.2.5/full/jquery.tools.min.js"></script>
+		<script type="text/javascript" src="http://fustos.com/scripts/jquery.easing.js"></script>
+		<script type="text/javascript" src="http://fustos.com/scripts/jquery.fancybox.js"></script>
+		<script type="text/javascript" src="http://fustos.com/scripts/smoothscroll.js"></script>
+		<script type="text/javascript" src="http://fustos.com/scripts/jquery.tinyscrollbar.min.js"></script>
+
+<style type="text/css">
+    * {margin:0px; padding:0px; border:none;}
+    body, html {overflow:hidden; height:100%;}
+    #containerLayer {visibility:hidden; position: absolute; width: 400%; height: 100%; z-index: 1; margin-left:-100%;}
+    .langContainer {position: relative; float:left; width: 25%; height: 100%; background:#fff; text-align:center;}
+    .contentContainer {
+        overflow:hidden;
+        padding: 5px;
+        font-size: 30px;
+        position: relative;
+        background: #ccc;
+        width: 990px;
+        height: 650px;
+        margin: auto;
+        text-align: center;
+    }
+    .visVisible {
+        visibility:visible;
+    }
+    .visHidden {
+        visibility:hidden;
+    }
+/*    .container {
+        top:0%;
+    }*/
+</style>
+
+</head>
+<body>
+<div id="containerLayer">
+    <div name="EN" id="enDiv" class="langContainer" vertical-align="center">
+        <div class="contentContainer">
+            1. elem ENG
+        </div>
+        <div class="contentContainer">
+            2. elem ENG
+        </div>
+        <div class="contentContainer">
+            3. elem ENG
+        </div>
+        <div class="contentContainer">
+            4. elem ENG
+        </div>
+        <div class="contentContainer">
+            5. elem ENG
+        </div>
+        <div class="contentContainer">
+            6. elem ENG
+        </div>
+    </div>
+    <div name="HU" id="huDiv" class="langContainer" vertical-align="center">
+        <div class="contentContainer">
+            1. elem HUN
+        </div>
+        <div class="contentContainer">
+            2. elem HUN
+        </div>
+        <div class="contentContainer">
+            3. elem HUN
+        </div>
+        <div class="contentContainer">
+            4. elem HUN
+        </div>
+        <div class="contentContainer">
+            5. elem HUN
+        </div>
+        <div class="contentContainer sel">
+            6. elem HUN
+        </div>
+    </div>
+    <div name="ES" id="esDiv" class="langContainer" vertical-align="center">
+        <div class="contentContainer">
+            1. elem ESP
+        </div>
+        <div class="contentContainer">
+            2. elem ESP
+        </div>
+        <div class="contentContainer">
+            3. elem ESP
+        </div>
+        <div class="contentContainer">
+            4. elem ESP
+        </div>
+        <div class="contentContainer">
+            5. elem ESP
+        </div>
+        <div class="contentContainer">
+            6. elem ESP
+        </div>
+    </div>
+</div>
+<script language="javascript" type="text/javascript">
+$(function(){function u(){var t=$(window).height();t<=783?$(".contentContainer").css({height:""+(t-120)+"px"}):$(".contentContainer").css({height:""}),window.topBottomMargin=(t-$(".contentContainer").height())/2>>0,n=$("#containerLayer").children(),i=n.eq(0).children().size(),containerLayerHeight=t*i-(i-2)*window.topBottomMargin,window.topBottomMargin<=0&&(window.topBottomMargin=window.topBottomMargin*-1),$(".contentContainer").css({marginTop:""+window.topBottomMargin+"px",marginBottom:""+window.topBottomMargin+"px"}),$("#containerLayer").css({height:""+containerLayerHeight+"px"})}function e(n){var i=document;i!=null&&(i.addEventListener?(n=="mousewheel"&&i.addEventListener("DOMMouseScroll",t,!1),i.addEventListener(n,t,!1),n=="touchmove"&&i.addEventListener(n,t,!1)):i.attachEvent&&i.attachEvent("on"+n,t))}function f(n){try{n=n?n:window.event,n.stopPropagation&&n.stopPropagation(),n.preventDefault&&n.preventDefault(),n.cancelBubble=!0,n.cancel=!0,n.returnValue=!1}catch(n){}return!1}var t=new f,r;e("mousewheel");var o=setInterval(function(){$("html, body").stop().animate({scrollTop:"0px"},{duration:100,complete:function(){$("#containerLayer").css({visibility:"visible"})}}),clearInterval(o)},100),n=0,i=0;window.topBottomMargin=0,containerLayerHeight=0,u(),$(window).resize(function(){u(),$("html, body").stop().animate({scrollTop:$(".contentContainer").eq(5).offset().top-window.topBottomMargin},100)}),r=setInterval(function(){$("#containerLayer").animate({marginLeft:"-200%"},{duration:500,complete:function(){n.last().after(n.first()),n=$("#containerLayer").children(),$("#containerLayer").css({marginLeft:"-100%"});var t=setInterval(function(){$("#containerLayer").animate({marginLeft:"0%"},{duration:500,complete:function(){n.first().before(n.last()),n=$("#containerLayer").children(),$("#containerLayer").css({marginLeft:"-100%"}),$("html, body").stop().animate({scrollTop:$(".contentContainer").eq(5).offset().top-window.topBottomMargin},500)}}),clearInterval(t)},2e3)}}),clearInterval(r)},2e3),$(window).scroll(function(){}),$(document).bind("mousewheel",function(){})});
+</script>
+</body>
+
+</html>
